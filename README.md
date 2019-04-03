@@ -1,4 +1,4 @@
-# Example of a Continuous Deliver pipeline with CodePipeline and CodeDeploy
+# Continuous Delivery pipeline with AWS CodePipeline
 
 Creating a simple Continuous Delivery pipeline allowing you to push changes from your GitHub repository to your EC2 Instances.
 
@@ -12,6 +12,7 @@ The following AWS services are used to create a Continuous Delivery pipeline.
 * EC2
 * S3
 * IAM
+* Lambda
 
 ## Setup
 
@@ -32,6 +33,7 @@ The script do the following:
 
 The script will ask you for:
 * S3 Bucket name for Lambda function artifact
+* Cloudformation Stack name
 * GitHub repository
 * GitHub owner (username of individual or organisation)
 * GitHub [OAuth Token with access to Repo](https://github.com/settings/tokens).
