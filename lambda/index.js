@@ -48,7 +48,7 @@ exports.handler = function(event, context) {
         success("URL check successful.")
       } else {
         console.log(response.statusCode);
-        console.log8(body);
+        console.log(body);
         failure("Invalid status code or content.");
       }
     });
