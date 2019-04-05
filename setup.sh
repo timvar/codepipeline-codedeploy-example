@@ -21,7 +21,10 @@ read GITHUB_OAUTH_TOKEN
 
 aws s3 mb s3://$BUCKET_NAME
 
-cd lambda && zip -r lambda.zip * 
+cd lambda 
+
+zip -r lambda.zip * 
+#powershell.exe -nologo -noprofile -command "&{ Compress-Archive -Path * -DestinationPath lambda.zip }"
 
 aws s3 cp lambda.zip s3://$BUCKET_NAME
 
