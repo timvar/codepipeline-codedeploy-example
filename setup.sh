@@ -26,11 +26,11 @@ cd lambda
 zip -r lambda.zip * 
 #powershell.exe -nologo -noprofile -command "&{ Compress-Archive -Path * -DestinationPath lambda.zip }"
 
-aws s3 cp lambda.zip s3://$BUCKET_NAME
+aws s3 cp lambda.zip s3://$BUCK
 
 cd ..
 
-aws cloudformation create-stack --stack-name $STACK_NAME --template-body file://deploy/stack.yml --parameters ParameterKey=BucketName,ParameterValue=$BUCKET_NAME ParameterKey=GitHubOwner,ParameterValue=$GITHUB_OWNER ParameterKey=GitHubOAuthToken,ParameterValue=$GITHUB_OAUTH_TOKEN ParameterKey=GitHubRepo,ParameterValue=$GITHUB_REPO ParameterKey=VPC,ParameterValue=$DEFAULT_VPC ParameterKey=Subnet,ParameterValue=$SUBNET --capabilities CAPABILITY_IAM
+aws cloudformation create-stack --stack-name pepe-stack --template-body file://deploy/stack.yml --parameters ParameterKey=BucketName,ParameterValue=pepe-cicd-example-240719 ParameterKey=GitHubOwner,ParameterValue=timvar ParameterKey=GitHubOAuthToken,ParameterValue=$GITHUB_OAUTH_TOKEN ParameterKey=GitHubRepo,ParameterValue=$GITHUB_REPO ParameterKey=VPC,ParameterValue=$DEFAULT_VPC ParameterKey=Subnet,ParameterValue=$SUBNET --capabilities CAPABILITY_IAM
 
 echo "Creating the CloudFormation stack, this will take a few minutes ..."
 
